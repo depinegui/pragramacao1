@@ -1,0 +1,28 @@
+package aula04;
+
+import java.text.DateFormat;
+import java.util.Date;
+import java.util.Locale;
+
+public class tema {
+		    
+    public static String getDataPorExtenso() {
+        Date data = new Date();
+        DateFormat formato = DateFormat.getDateInstance(DateFormat.FULL, new Locale("pt", "BR"));
+        String dataFormatada = formato.format(data);
+        
+        DateFormat horaFormato = DateFormat.getTimeInstance(DateFormat.SHORT, new Locale("pt", "BR"));
+        String horaFormatada = horaFormato.format(data);
+        String[] partesHora = horaFormatada.split(":");
+        String horas = partesHora[0];
+        String minutos = partesHora[1];
+        
+        String resultado = "Hoje é " + dataFormatada + " e agora são " + horas + " horas e " + minutos + " minutos.";
+        
+        return resultado;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(getDataPorExtenso());
+    }
+}
