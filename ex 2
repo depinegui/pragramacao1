@@ -1,0 +1,24 @@
+package aula04;
+
+import java.time.LocalDate;
+import java.time.Period;
+
+public class tema2 {
+
+    public static void main(String[] args) {
+        contaTempo(1, 1, 2026);
+    }
+    
+    public static void contaTempo(int diaFuturo, int mesFuturo, int anoFuturo) {
+        LocalDate dataAtual = LocalDate.now();
+        LocalDate dataFutura = LocalDate.of(anoFuturo, mesFuturo, diaFuturo);
+
+        Period periodo = Period.between(dataAtual, dataFutura);
+
+        int anosRestantes = periodo.getYears();
+        int mesesRestantes = periodo.getMonths();
+        int diasRestantes = periodo.getDays();
+        
+        System.out.println("Faltam " + anosRestantes + " ano(s), " + mesesRestantes + " mês(es) e " + diasRestantes + " dia(s) para o ano de " + anoFuturo);
+    }   
+}
